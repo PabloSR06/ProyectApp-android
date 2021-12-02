@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ProyectAPP</string>
+    <string name="entradaButton">Entrar al Taller</string>
+    <string name="sinInternetLabel">Se necesita Internet para usar esta app</string>
+</resources>
