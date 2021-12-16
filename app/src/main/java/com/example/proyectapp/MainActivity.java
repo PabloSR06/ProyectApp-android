@@ -16,10 +16,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button boton = (Button) findViewById(R.id.entradaButton);
+        Button entradaButton = (Button) findViewById(R.id.entradaButton);
 
-        boton.setOnClickListener(new View.OnClickListener() { // hago clic en el botón
-
+        entradaButton.setOnClickListener(new View.OnClickListener() { // hago clic en el botón
             @Override
             public void onClick(View v) {
                 onContinuarAction(v);
@@ -29,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onContinuarAction (View vista){
-        if (connected() == true){
+        if (connected()){
             Intent intent= new Intent (this, WebActivity.class);
             startActivity(intent);
         }else{
@@ -38,18 +37,17 @@ public class MainActivity extends AppCompatActivity {
     }
     public void goErrorActivity (){
         Intent intent= new Intent (this, ErrorActivity.class);
+        intent.putExtra("error_code", 1);
         startActivity(intent);
     }
 
     private boolean connected(){
         ConnectivityManager cm = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = cm.getActiveNetworkInfo();
-        boolean activo;
+        boolean activo = false;
 
         if (networkInfo != null && networkInfo.isConnected()) {
-            activo=true;
-        } else {
-            activo=false;
+            activo = true;
         }
         return activo;
     }

@@ -2,4 +2,6 @@
     <string name="app_name">ProyectAPP</string>
     <string name="entradaButton">Entrar al Taller</string>
     <string name="sinInternetLabel">Se necesita Internet para usar esta app</string>
+    <string name="errorWebView">Ha ocurrido un error inesperado</string>
+    <string name="tryLater">Intentalo de nuevo mas tarde</string>
 </resources>
