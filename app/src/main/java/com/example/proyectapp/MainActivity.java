@@ -17,8 +17,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button entradaButton = (Button) findViewById(R.id.entradaButton);
+        Button helpButton = (Button) findViewById(R.id.helpButton);
 
-        entradaButton.setOnClickListener(new View.OnClickListener() { // hago clic en el botón
+        helpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goHelpAction(v);
+            }
+        });
+
+        entradaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onContinuarAction(v);
@@ -30,6 +38,14 @@ public class MainActivity extends AppCompatActivity {
     public void onContinuarAction (View vista){
         if (connected()){
             Intent intent= new Intent (this, WebActivity.class);
+            startActivity(intent);
+        }else{
+            goErrorActivity();
+        }
+    }
+    public void goHelpAction (View vista){
+        if (connected()){
+            Intent intent= new Intent (this, HelpActivity.class);
             startActivity(intent);
         }else{
             goErrorActivity();

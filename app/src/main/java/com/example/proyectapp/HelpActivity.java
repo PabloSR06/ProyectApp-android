@@ -4,12 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class WebActivity extends AppCompatActivity {
+public class HelpActivity extends AppCompatActivity {
 
     private WebView miVisorWeb;
 
@@ -18,12 +17,9 @@ public class WebActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web);
 
-        //String url = "https://www.googlrrrre.com";
-        String url = "https://pglproyect.000webhostapp.com/";
+        String url = "https://pglproyect.000webhostapp.com/pages/help.html";
 
         miVisorWeb = (WebView) findViewById(R.id.webview);
-        final WebSettings ajustesVisorWeb = miVisorWeb.getSettings();
-        ajustesVisorWeb.setJavaScriptEnabled(true);
         miVisorWeb.loadUrl(url);
 
 
@@ -42,7 +38,4 @@ public class WebActivity extends AppCompatActivity {
         intent.putExtra("error_code", 0);
         startActivity(intent);
     }
-
-
 }
-

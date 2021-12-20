@@ -4,4 +4,6 @@
     <string name="sinInternetLabel">Se necesita Internet para usar esta app</string>
     <string name="errorWebView">Ha ocurrido un error inesperado</string>
     <string name="tryLater">Intentalo de nuevo mas tarde</string>
+    <string name="ayuda">Ayuda</string>
+    <string name="logo">Logo</string>
 </resources>
