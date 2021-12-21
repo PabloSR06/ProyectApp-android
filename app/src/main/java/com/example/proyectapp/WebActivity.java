@@ -43,6 +43,15 @@ public class WebActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
+    public void onBackPressed() {
+        if (miVisorWeb.canGoBack()) {
+            miVisorWeb.goBack();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
 
 }
 
